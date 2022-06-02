@@ -1,0 +1,2 @@
+class CrimeList < ApplicationRecord
+end

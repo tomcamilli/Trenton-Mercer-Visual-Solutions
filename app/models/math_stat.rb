@@ -1,0 +1,2 @@
+class MathStat < ApplicationRecord
+end

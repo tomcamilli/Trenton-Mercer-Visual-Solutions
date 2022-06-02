@@ -1,0 +1,8 @@
+
+# DO NOT DELETE THIS FILE. Create a file called application.yml and copy these two lines of code, replacing all instances of
+#  '/insert/path/to/application/here/'
+# with the path to the application on your system. DO NOT ADD YOUR application.yml FILE TO THE COMMIT!!!!!!
+
+
+image_asset_path: '/insert/path/to/application/here/app/assets/images/rplot.jpg'
+abs_r_path: '/insert/path/to/application/here/app/assets/images/corr_plot_in_ruby.r'

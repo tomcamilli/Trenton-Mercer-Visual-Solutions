@@ -1,0 +1,2 @@
+class SchoolPopulation < ApplicationRecord
+end

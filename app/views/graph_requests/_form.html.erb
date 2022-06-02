@@ -1,0 +1,21 @@
+<%= form_with(model: graph_request, local: true) do |form| %>
+  <% if graph_request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(graph_request.errors.count, "error") %> prohibited this graph_request from being saved:</h2>
+
+      <ul>
+        <% graph_request.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.label :x_axis, 'X Axis Crime Data: ' %>
+  <%= f.select :xaxis, options_for_select([gun_stats, robbery_stats]) %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

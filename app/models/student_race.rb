@@ -1,0 +1,2 @@
+class StudentRace < ApplicationRecord
+end

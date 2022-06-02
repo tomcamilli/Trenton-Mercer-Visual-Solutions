@@ -1,0 +1,2 @@
+class GraphRequest < ApplicationRecord
+end

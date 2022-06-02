@@ -1,0 +1,2 @@
+class GraduationDatum < ApplicationRecord
+end

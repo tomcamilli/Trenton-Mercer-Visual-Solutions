@@ -1,0 +1,2 @@
+class LitStat < ApplicationRecord
+end

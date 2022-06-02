@@ -1,0 +1,2 @@
+class StudentStatistic < ApplicationRecord
+end

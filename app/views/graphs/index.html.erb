@@ -1,0 +1,205 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+div.axis {
+	position: relative;
+	width: 320px;
+	padding: 10px;
+	border: 5px solid gray;
+	border-radius: 9px;
+	display: block;
+	margin: 0 auto;
+}
+
+div.graph {
+	position: absolute;
+	top: 80px; 
+}
+
+.btn {
+	border: none;
+	background-color: inherit;
+	padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+div.update {
+	position: relative;
+	display: 200px;
+	width: 200px;
+	margin: 0 auto;
+}
+.return {
+	position: relative;
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+}
+.plus {
+	position: relative;
+	left: 880px;
+	border: solid;
+	background-color: inherit;
+	padding: 1px 13px;
+	font-size: 18px;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+	border-radius: 12px;
+}
+
+.gr {
+	color: green;
+}
+.gr:hover {
+	background: #4CAF50;
+	color: white;
+}
+
+.bl {
+	color: dodgerblue;
+}
+.bl:hover {
+	background: #2196F3;
+	color: white;
+}
+
+.or {
+	color: orange;
+}
+.or:hover {
+	background: #ff9800;
+	color: white;
+}
+
+.re {
+	color: red;
+}
+.re:hover {
+	background: #f44336;
+	color: white;
+}
+
+.de {
+	color: black;
+}
+.de:hover {
+	background: #e7e7e7;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f1f1f1;
+	min-width: 160px;
+	border-radius: 6px;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	border-radius: 6px;
+}
+
+.dropdown-content a:hover {background-color: #ddd; }
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .btn {background-color: #3e8e41; }
+
+</style>
+<pre>
+
+</pre>
+
+<%= form_with url: "/graph_maker", method: :get do |form| %>
+
+<pre>
+</pre>
+
+<div class="axis">
+	<h4>X Axis</h4>
+	<div class = "row">
+	<div class = "form-check ml-3">
+	<%= form.label :crimeX, "Crime"%>   
+	<%= form.radio_button :xaxis, "Crime", required: true%>
+	</div>
+	<div class = "form-check ml-5">
+	<%= form.label :educationX, "Education"%>
+	<%= form.radio_button :xaxis, "Education"%>
+	</div>
+	</div>
+	<%= form.select :xaxis_crime, 
+		{
+			#"Crime" => [["Option 1", "1"], ["Option 2", "2"], ["Option 3", "3"]],
+			"Crime" => [["Murder", "Murder"], ["Rape", "Rape"], ["Assault", "Assault"]],
+		},
+		{ :class => 'form-control' } %>
+	<%= form.select :xaxis_education, 
+		{
+			"Education" => [["School Populations", "School Populations"], ["Math Scores", "Math Scores"], ["Lit Scores", "Lit Scores"]],
+		},
+		{ :class => 'form-control' } %>
+</div>
+<pre>
+
+</pre>
+<div class="axis">
+	<h4>Y Axis</h4>
+	<div class = "row">
+	<div class = "form-check ml-3">
+	<%= form.label :crimeY, "Crime"%>   
+	<%= form.radio_button :yaxis, "Crime", required: true%>
+	</div>
+	<div class = "form-check ml-5">
+	<%= form.label :educationY, "Education"%>
+	<%= form.radio_button :yaxis, "Education"%>
+	</div>
+	</div>
+	<%= form.select :yaxis_crime, 
+		{
+			#"Crime" => [["Option 1", "1"], ["Option 2", "2"], ["Option 3", "3"]],
+			"Crime" => [["Murder", "Murder"], ["Rape", "Rape"], ["Assault", "Assault"]],
+		},
+		{ :class => 'form-control' } %>
+	<%= form.select :yaxis_education, 
+		{
+			"Education" => [["School Populations", "School Populations"], ["Math Scores", "Math Scores"], ["Lit Scores", "Lit Scores"]],
+		},
+		{ :class => 'form-control' } %>
+</div>
+<pre>
+
+
+
+</pre>
+<%# <button class="btn bl update"> %>
+<div class="update">
+<%= form.submit "Update Graph" %>
+</div>
+<%# </button> %>
+<pre>
+</pre>
+<div class = "row">
+<button class="btn bl return">
+	<%= link_to "Return to Home", controller:"home" %>
+</button>
+<button class="btn bl return">
+	<%= link_to "Show Graph", controller:"graphs", action: "graph_maker" %>
+</button>
+</div>
+<% end %>
+
+<pre>
+
+</pre>
+
+</body>
+</html>
+
+

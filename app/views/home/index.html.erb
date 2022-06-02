@@ -1,0 +1,70 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+h1 { text-align: center; }
+h3 { text-align: center; }
+p {text-align: center; }
+
+.btn {
+	border: none;
+	background-color: inherit;
+	padding: 14px 28px;
+	font-size: 16px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+.gr {
+	color: green;
+}
+.gr:hover {
+	background: #4CAF50;
+	color: white;
+}
+
+.bl {
+	color: dodgerblue;
+}
+.bl:hover {
+	background: #2196F3;
+	color: white;
+}
+
+.block {
+	display: block;
+	width: 200px;
+}
+
+.margin-auto {
+	margin: 0 auto;
+}
+
+</style>
+
+<pre>
+</pre>
+<h1>Trenton Mercer Visual Solutions</h1>
+<h3>User Homepage</h3>
+<p>The main goal of TMVS is to provide an easy accessible visualization tool for independent organizations</p>
+<p>in the Trenton-Mercer area. The data used is primarily crime and education data to allow organizations to</p>
+<p>draw conclusions and see trends/correlations to allow them to apply for grants.</p>
+<pre>
+
+</pre>
+<button class="btn bl block margin-auto">
+	<%= link_to "View Data", controller:"database" %>
+</button>
+
+<pre>
+</pre>
+<button class="btn bl block margin-auto">
+	<%= link_to "View Graphs", controller:"graphs" %>
+</button>
+
+</body>
+</html>
+
+
+
